@@ -15,6 +15,7 @@ type TodoEvents =
             | Activated  dateTime -> todo.Activate dateTime
             | Completed  dateTime -> todo.Complete dateTime
 
+#if !FABLE_COMPILER
     static member Deserialize (x: string): Result<TodoEvents, string> =
         try
             JsonSerializer.Deserialize<TodoEvents> (x, jsonOptions) |> Ok
@@ -23,6 +24,7 @@ type TodoEvents =
         
     member this.Serialize =
         JsonSerializer.Serialize (this, jsonOptions)
+#endif
 
 
 

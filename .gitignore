@@ -21,6 +21,7 @@
 [Ll]ocks-*
 [Ss]taging*
 obj/
+node_modules
 *.cache
 *.ilk
 *.meta

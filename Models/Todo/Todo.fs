@@ -51,6 +51,7 @@ open System
         static member SnapshotsInterval = 50
         static member StorageName = "_Todo"
         static member Version = "_01"
+#if !FABLE_COMPILER
         member this.Serialize = 
             (this, jsonOptions) |> JsonSerializer.Serialize
         static member Deserialize (data: string) =
@@ -59,6 +60,7 @@ open System
                 Ok todo
             with
                 | ex -> Error ex.Message
+#endif
         
         
 
