@@ -19,26 +19,12 @@ export class TodoCommands extends Union {
         if (this$.tag === 1) {
             const dateTime_1 = this$.fields[0];
             const input_3 = Todo__Complete_7F9DDECF(todo, dateTime_1);
-            if (input_3.tag === 1) {
-                const e_1 = input_3.fields[0];
-                return new FSharpResult$2(1, [e_1]);
-            }
-            else {
-                const x_1 = input_3.fields[0];
-                return new FSharpResult$2(0, [[x_1, singleton(new TodoEvents(1, [dateTime_1]))]]);
-            }
+            return (input_3.tag === 1) ? (new FSharpResult$2(1, [input_3.fields[0]])) : (new FSharpResult$2(0, [[input_3.fields[0], singleton(new TodoEvents(1, [dateTime_1]))]]));
         }
         else {
             const dateTime = this$.fields[0];
             const input_1 = Todo__Activate_7F9DDECF(todo, dateTime);
-            if (input_1.tag === 1) {
-                const e = input_1.fields[0];
-                return new FSharpResult$2(1, [e]);
-            }
-            else {
-                const x = input_1.fields[0];
-                return new FSharpResult$2(0, [[x, singleton(new TodoEvents(0, [dateTime]))]]);
-            }
+            return (input_1.tag === 1) ? (new FSharpResult$2(1, [input_1.fields[0]])) : (new FSharpResult$2(0, [[input_1.fields[0], singleton(new TodoEvents(0, [dateTime]))]]));
         }
     }
     get Undoer() {

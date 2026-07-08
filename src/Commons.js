@@ -22,7 +22,6 @@ export function TodoId_get_New() {
 }
 
 export function TodoId__get_Value(this$) {
-    const id = this$.fields[0];
-    return id;
+    return this$.fields[0];
 }
 

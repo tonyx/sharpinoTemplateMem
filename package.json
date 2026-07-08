@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "dotnet fable watch Client.fsproj --outDir src --noCache --run vite",
-    "build": "dotnet fable Client.fsproj --outDir src --run vite build"
+    "dev": "vite",
+    "build": "vite build"
   },
   "dependencies": {
     "react": "^18.3.1",

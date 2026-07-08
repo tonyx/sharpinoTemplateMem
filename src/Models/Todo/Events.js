@@ -13,14 +13,7 @@ export class TodoEvents extends Union {
     }
     Process(todo) {
         const this$ = this;
-        if (this$.tag === 1) {
-            const dateTime_1 = this$.fields[0];
-            return Todo__Complete_7F9DDECF(todo, dateTime_1);
-        }
-        else {
-            const dateTime = this$.fields[0];
-            return Todo__Activate_7F9DDECF(todo, dateTime);
-        }
+        return (this$.tag === 1) ? Todo__Complete_7F9DDECF(todo, this$.fields[0]) : Todo__Activate_7F9DDECF(todo, this$.fields[0]);
     }
 }
 

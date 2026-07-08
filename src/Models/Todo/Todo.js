@@ -37,12 +37,11 @@ export function Todo_New_Z721C83C5(text) {
 }
 
 export function Todo__Activate_7F9DDECF(this$, dateTime) {
-    let currentDateTime;
     let input;
     const matchValue = this$.State;
     let matchResult, currentDateTime_1;
     if (matchValue.tag === 0) {
-        if ((currentDateTime = matchValue.fields[0], compareTo(currentDateTime, dateTime) < 0)) {
+        if (compareTo(matchValue.fields[0], dateTime) < 0) {
             matchResult = 0;
             currentDateTime_1 = matchValue.fields[0];
         }
@@ -62,22 +61,19 @@ export function Todo__Activate_7F9DDECF(this$, dateTime) {
             input = (new FSharpResult$2(1, ["Only added todo at earlier dateTime can be activated"]));
     }
     if (input.tag === 1) {
-        const e = input.fields[0];
-        return new FSharpResult$2(1, [e]);
+        return new FSharpResult$2(1, [input.fields[0]]);
     }
     else {
-        const x_1 = input.fields[0];
         return new FSharpResult$2(0, [new Todo(this$.TodoId, this$.Text, new State(1, [dateTime]))]);
     }
 }
 
 export function Todo__Complete_7F9DDECF(this$, dateTime) {
-    let currentDateTime;
     let input;
     const matchValue = this$.State;
     let matchResult, currentDateTime_1;
     if (matchValue.tag === 1) {
-        if ((currentDateTime = matchValue.fields[0], compareTo(currentDateTime, dateTime) < 0)) {
+        if (compareTo(matchValue.fields[0], dateTime) < 0) {
             matchResult = 0;
             currentDateTime_1 = matchValue.fields[0];
         }
@@ -97,11 +93,9 @@ export function Todo__Complete_7F9DDECF(this$, dateTime) {
             input = (new FSharpResult$2(1, ["Only active todo at earlier dateTime can be completed"]));
     }
     if (input.tag === 1) {
-        const e = input.fields[0];
-        return new FSharpResult$2(1, [e]);
+        return new FSharpResult$2(1, [input.fields[0]]);
     }
     else {
-        const x_1 = input.fields[0];
         return new FSharpResult$2(0, [new Todo(this$.TodoId, this$.Text, new State(2, [dateTime]))]);
     }
 }

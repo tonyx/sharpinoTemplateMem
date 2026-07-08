@@ -6,9 +6,14 @@
 
   <ItemGroup>
     <Compile Include="Commons.fs" />
+    <Compile Include="src/SharpinoCoreShim.fs" />
     <Compile Include="Models/Todo/Todo.fs" />
     <Compile Include="Models/Todo/Events.fs" />
     <Compile Include="Models/Todo/Commands.fs" />
+    <Compile Include="src/SharpinoHandlerShim.fs" />
+    <Compile Include="TodoManager.fs" />
+    <Compile Include="src/ExpectoShim.fs" />
+    <Compile Include="Tests.fs" />
     <Compile Include="src/App.fs" />
   </ItemGroup>
 
@@ -17,7 +22,7 @@
     <PackageReference Include="Fable.React" Version="9.3.0" />
     <PackageReference Include="FSharp.SystemTextJson" Version="1.4.36" />
     <PackageReference Include="FsToolkit.ErrorHandling" Version="5.2.0" />
-    <PackageReference Include="Sharpino.Core" Version="6.0.6" />
+    <PackageReference Include="FSharpPlus" Version="1.6.1" />
     <PackageReference Include="System.Text.Json" Version="8.0.4" />
   </ItemGroup>
 
