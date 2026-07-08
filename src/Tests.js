@@ -58,5 +58,8 @@ export const tests = TestDsl_testSequenced(TestDsl_testList("todos tests", ofArr
         Expect_isTrue(exists((x_7) => equals(x_7, learnRust_1), retrievedTodos_2), "error in retrieving todos");
         return Sharpino_Template_TaskShim_TaskBuilder__Zero(Sharpino_Template_TaskShim_task);
     });
+}))), TestDsl_testCaseTask("fail test", () => Sharpino_Template_TaskShim_TaskBuilder__Run_ZD4A93B1(Sharpino_Template_TaskShim_task, Sharpino_Template_TaskShim_TaskBuilder__Delay_Z5276B41B(Sharpino_Template_TaskShim_task, () => {
+    Expect_isTrue(false, "will fail");
+    return Sharpino_Template_TaskShim_TaskBuilder__Zero(Sharpino_Template_TaskShim_task);
 })))])));
 
