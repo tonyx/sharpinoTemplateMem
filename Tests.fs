@@ -71,5 +71,9 @@ let tests =
                 Expect.isTrue (retrievedTodos |> List.exists (fun x -> x = learnFSharp)) "error in retrieving todos"
                 Expect.isTrue (retrievedTodos |> List.exists (fun x -> x = learnRust)) "error in retrieving todos"
             }
+        testCaseTask "fail test" <| fun _ ->
+            task {
+                Expect.isTrue false "will fail"
+            }
     ] 
     |> testSequenced
