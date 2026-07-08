@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "dev:local": "dotnet fable watch Client.fsproj --outDir src --noCache --run vite",
-    "build": "vite build"
+    "build": "fable src --run vite build"
   },
   "dependencies": {
     "react": "^18.3.1",
